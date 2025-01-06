@@ -1,0 +1,44 @@
+.img {
+    width: 350px;
+    height: 450px;
+    padding: 2.5rem;
+    filter: grayscale(1);
+    object-fit: cover;
+    transition: all 1s;
+    animation: scaleimg 3s linear infinite;
+
+
+}
+
+@keyframes scaleimg {
+    0% {
+        filter: grayscale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: grayscale(1);
+        transform: scale(1.1);
+        box-shadow: 3px 3px 10px black;
+
+    }
+
+    100% {
+        filter: grayscale(0);
+        transform: scale(1);
+
+
+    }
+}
+.aboutme{
+box-shadow: 10px 10px 60px #000 , inset -10px -10px 60px #000 ;
+}
+/* Card.css */
+.card-hover-layer {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-container:hover .card-hover-layer {
+    transform: translateY(0);
+  }
+  

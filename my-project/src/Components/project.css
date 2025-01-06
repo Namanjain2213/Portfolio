@@ -1,0 +1,6 @@
+.project{
+    box-shadow: 10px 10px 60px #000 , inset -10px -10px 60px #000 ;
+}
+.butt{
+    box-shadow: 10px 10px 60px #000 , inset -10px -10px 60px rgb(139, 136, 136) ;
+}
