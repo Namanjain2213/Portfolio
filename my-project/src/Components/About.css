@@ -30,7 +30,7 @@
 
     }
 }
-.aboutme{
+/* .aboutme{
 box-shadow: 10px 10px 60px #000 , inset -10px -10px 60px #000 ;
 }
 /* Card.css */
@@ -41,4 +41,18 @@ box-shadow: 10px 10px 60px #000 , inset -10px -10px 60px #000 ;
   .card-container:hover .card-hover-layer {
     transform: translateY(0);
   }
-  
+   */
+  /* Add any additional custom styles here if needed */
+.aboutme {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .aboutme {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
