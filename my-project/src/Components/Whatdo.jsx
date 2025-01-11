@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { FaGraduationCap } from "react-icons/fa";
 import { BsSuitcaseLg } from "react-icons/bs";
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Whatdo() {
-  useGSAP(() => {
-    gsap.to("#exp", {
-      // Add your GSAP animation here
-    })
-  })
+  useEffect(() => {
+    gsap.fromTo(
+      '.experience-card',
+      {
+        opacity: 0,
+        y: 50,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 2,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '#exp',
+          start: 'top 90%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className='flex justify-center items-center p-4 m-auto flex-col w-full min-h-screen' id='exp'>
@@ -41,12 +62,12 @@ function Whatdo() {
         />
       </div>
     </div>
-  )
+  );
 }
 
 function ExperienceCard({ icon, title, items }) {
   return (
-    <div className='w-full md:w-1/2 bg-zinc-700 hover:bg-zinc-600 transition-all ease-in-out duration-200 p-6 rounded-lg'>
+    <div className='experience-card w-full md:w-1/2 bg-zinc-700 hover:bg-zinc-600 transition-all ease-in-out duration-200 p-6 rounded-lg'>
       <div className='flex justify-center items-center gap-3 mb-4'>
         {icon}
         <h2 className='text-white text-xl md:text-2xl font-bold'>{title}</h2>
@@ -59,8 +80,7 @@ function ExperienceCard({ icon, title, items }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
-export default Whatdo
-
+export default Whatdo;

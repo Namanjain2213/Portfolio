@@ -5,6 +5,8 @@ import './home.css';
 import About from './About';
 import Whatdo from './Whatdo';
 import Project from './Project';
+import Contact from './Contact';
+import Footer from './Footer';
 
 function Home() {
     useEffect(() => {
@@ -61,6 +63,9 @@ function Home() {
             <About />
             <Whatdo/>
             <Project/>
+            <Contact/>
+            <hr />
+            <Footer/>
         </div>
     );
 }

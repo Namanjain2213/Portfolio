@@ -33,7 +33,7 @@ function About() {
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: socialIconsRef.current,
-          start: "top 80%",
+          start: "top 60%",
         },
       });
 
@@ -45,19 +45,19 @@ function About() {
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: techStackRef.current,
-          start: "top 80%",
+          start: "top 60%",
         },
       });
 
       gsap.to(fullStackItems, {
         opacity: 1,
-        scale: 1,
+        scale: 1.5,
         duration: 0.5,
         stagger: 0.1,
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: fullStackRef.current,
-          start: "top 80%",
+          start: "top 60%",
         },
       });
     }, []);
@@ -102,8 +102,8 @@ function SocialSection({ socialIconsRef }) {
     return (
         <div className="social mb-4 mt-10 w-full max-w-[350px] h-[350px] box-border shadow-2xl flex flex-col justify-center items-center hover:shadow-black scale-100 hover:scale-110 transition-all duration-200 ease-linear">
             <div className='text-white text-2xl mb-10 font-bold'>Connect with me</div>
-            <div className='grid grid-cols-3 gap-8' ref={socialIconsRef}>
-                <SocialIcon href="https://wa.me/+916264339060" Icon={FaWhatsapp} />
+            <div className='grid grid-cols-3 gap-8 ' ref={socialIconsRef}>
+                <SocialIcon href="https://wa.me/+916264339060" Icon={FaWhatsapp}  />
                 <SocialIcon href="https://www.instagram.com/naman__jain__22?utm_source=qr&igsh=MW1iZGFyZHlzODhpMg==" Icon={FaInstagram} />
                 <SocialIcon href="https://www.linkedin.com/in/naman-jain-bb3969286/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" Icon={FaLinkedin} />
                 <SocialIcon href="https://leetcode.com/u/naman_jain2213/" Icon={SiLeetcode} />
@@ -151,13 +151,13 @@ function TechIcon({ Icon, color }) {
 
 function FullStackSection({ fullStackRef }) {
     return (
-        <div className='w-full mt-4 mb-4 p-2 flex justify-center box-border aboutme items-center m-auto'>
+        <div className='w-full mt-4 mb-4 p-16 flex justify-center box-border aboutme items-center m-auto'>
             <div className="relative w-full max-w-[900px] h-auto md:h-[410px] shadow-lg rounded-lg overflow-hidden group">
                 <div className="p-2 m-2 flex flex-col items-center justify-center" ref={fullStackRef}>
                     <h2 className="text-2xl font-bold text-white mb-4 fullstack-item">Full Stack Development</h2>
                     <SkillItem text="Build a single page application using React js" />
                     <SkillItem text="Build a Dynamic content using React and Tailwind" />
-                    <div className='grid grid-cols-5 gap-3 text-5xl text-white w-full max-w-[300px] m-auto p-2 mt-4'>
+                    <div className='grid grid-cols-5 gap-9 text-5xl text-white w-full max-w-[300px] m-auto p-2 mt-8'>
                         <TechIcon Icon={SiCplusplus} color="text-blue-900" />
                         <TechIcon Icon={FaHtml5} color="text-red-800" />
                         <TechIcon Icon={FaCss3Alt} color="text-blue-900" />
