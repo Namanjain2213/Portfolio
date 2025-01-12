@@ -27,13 +27,13 @@ function Project() {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 2,
+        duration: 1,
         ease: 'power3.out',
         stagger: 0.2,
         scrollTrigger: {
           trigger: '#project',
-          start: 'top 95%',
-          end: 'bottom 10%',
+          start: 'top 90%',
+          end: 'bottom 20%',
           toggleActions: 'play none none reverse',
         },
       }
@@ -50,8 +50,8 @@ function Project() {
         ease: 'back.out(1.7)',
         scrollTrigger: {
           trigger: titleRef.current,
-          start: 'top 95%',
-          end: 'bottom 10%',
+          start: 'top 80%',
+          end: 'bottom 20%',
           toggleActions: 'play none none reverse',
         },
       }
@@ -68,8 +68,8 @@ function Project() {
         ease: 'back.out(1.7)',
         scrollTrigger: {
           trigger: underlineRef.current,
-          start: 'top 95%',
-          end: 'bottom 10%',
+          start: 'top 80%',
+          end: 'bottom 20%',
           toggleActions: 'play none none reverse',
         },
       }
@@ -77,10 +77,10 @@ function Project() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center m-auto mt-[-100px] flex-col w-full min-h-screen" id="project">
-      <h2 ref={titleRef} className="text-white text-2xl md:text-3xl font-bold mb-4">My Projects</h2>
-      <div ref={underlineRef} className="h-[2px] w-48 bg-white mb-8"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
+    <div className="flex justify-center items-center m-auto flex-col w-full min-h-screen px-4 sm:px-6 lg:px-8" id="project">
+      <h2 ref={titleRef} className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-center">My Projects</h2>
+      <div ref={underlineRef} className="h-[2px] w-48 sm:w-56 lg:w-64 bg-white mb-8"></div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
         <ProjectCard
           image={cw}
           title="Cake ordering Website"
@@ -109,25 +109,27 @@ function Project() {
 
 function ProjectCard({ image, title, githubLink, liveLink, techStack }) {
   return (
-    <div className="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-white font-medium text-lg">{title}</h3>
-          <div className="flex space-x-3">
-            <a href={githubLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
-              <FaGithub className="text-xl" />
-            </a>
-            <a href={liveLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
-              <FaLink className="text-xl" />
-            </a>
+    <div className="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col">
+      <img src={image} alt={title} className="w-full h-48 sm:h-56 lg:h-64 object-cover" />
+      <div className="p-4 flex-grow flex flex-col justify-between">
+        <div>
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-white font-medium text-lg sm:text-xl">{title}</h3>
+            <div className="flex space-x-3">
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FaGithub className="text-xl sm:text-2xl" />
+              </a>
+              <a href={liveLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FaLink className="text-xl sm:text-2xl" />
+              </a>
+            </div>
           </div>
+          <p className="text-gray-400 text-sm sm:text-base mb-4">
+            <span className="font-bold">Tech Stack:</span> {techStack}
+          </p>
         </div>
-        <p className="text-gray-400 text-sm mb-4">
-          <span className="font-bold">Tech Stack:</span> {techStack}
-        </p>
-        <a href={liveLink} target="_blank" rel="noopener noreferrer" className="block">
-          <button className="w-full py-2 px-4 bg-[#00A6ED] text-white rounded hover:bg-[#0088C3] transition duration-300">
+        <a href={liveLink} target="_blank" rel="noopener noreferrer" className="block mt-auto">
+          <button className="w-full py-2 px-4 bg-[#00A6ED] text-white rounded hover:bg-[#0088C3] transition duration-300 text-sm sm:text-base">
             Check site
           </button>
         </a>

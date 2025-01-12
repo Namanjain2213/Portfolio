@@ -51,7 +51,7 @@ function About() {
 
       gsap.to(fullStackItems, {
         opacity: 1,
-        scale: 1.5,
+        scale: 1,
         duration: 0.5,
         stagger: 0.1,
         ease: "back.out(1.7)",
@@ -75,14 +75,14 @@ function About() {
 
 function LeftSection() {
     return (
-        <div className="left text-3xl max-w-full lg:max-w-[650px] text-white lg:w-1/2 flex flex-col items-center mb-8 lg:mb-0">
+        <div className="left text-xl sm:text-2xl lg:text-3xl max-w-full lg:max-w-[650px] text-white lg:w-1/2 flex flex-col items-center mb-8 lg:mb-0">
             <div className="mb-4">
-                <img src={mypic} alt="Profile" className="img rounded-[50px] w-[250px] h-[350px] md:w-[350px] md:h-[500px] mt-4" />
+                <img src={mypic} alt="Profile" className="img rounded-[50px] w-[200px] h-[280px] sm:w-[250px] sm:h-[350px] md:w-[350px] md:h-[500px] mt-4" />
             </div>
-            <div className="aboutme mb-4 mt-10 w-full lg:w-[550px] h-fit p-4 box-border flex flex-col justify-center items-center transition-all duration-200 ease-linear">
-                <div className="text-2xl md:text-3xl mb-4">About Me</div>
-                <p className='text-lg md:text-2xl text-center lg:text-left'>
-                    I'm <span className='text-2xl md:text-3xl text-cyan-500'>Naman</span>, a full-stack developer with a passion for frontend and problem-solving. Based in India, I specialize in React and Node.js.
+            <div className="aboutme mb-4 mt-6 sm:mt-10 w-full lg:w-[550px] h-fit p-4 box-border flex flex-col justify-center items-center transition-all duration-200 ease-linear">
+                <div className="text-xl sm:text-2xl md:text-3xl mb-4">About Me</div>
+                <p className='text-base sm:text-lg md:text-2xl text-center lg:text-left'>
+                    I'm <span className='text-xl sm:text-2xl md:text-3xl text-cyan-500'>Naman</span>, a full-stack developer with a passion for frontend and problem-solving. Based in India, I specialize in React and Node.js.
                 </p>
             </div>
         </div>
@@ -91,7 +91,7 @@ function LeftSection() {
 
 function RightSection({ socialIconsRef, techStackRef }) {
     return (
-        <div className="right lg:w-1/2 flex flex-col items-center mt-8 lg:mt-0">
+        <div className="right lg:w-1/2 flex flex-col items-center mt-4 sm:mt-8 lg:mt-0">
             <SocialSection socialIconsRef={socialIconsRef} />
             <TechStackSection techStackRef={techStackRef} />
         </div>
@@ -100,9 +100,9 @@ function RightSection({ socialIconsRef, techStackRef }) {
 
 function SocialSection({ socialIconsRef }) {
     return (
-        <div className="social mb-4 mt-10 w-full max-w-[350px] h-[350px] box-border shadow-2xl flex flex-col justify-center items-center hover:shadow-black scale-100 hover:scale-110 transition-all duration-200 ease-linear">
-            <div className='text-white text-2xl mb-10 font-bold'>Connect with me</div>
-            <div className='grid grid-cols-3 gap-8 ' ref={socialIconsRef}>
+        <div className="social mb-4 mt-6 sm:mt-10 w-full max-w-[300px] sm:max-w-[350px] h-[300px] sm:h-[350px] box-border shadow-2xl flex flex-col justify-center items-center hover:shadow-black scale-100 hover:scale-110 transition-all duration-200 ease-linear">
+            <div className='text-white text-xl sm:text-2xl mb-6 sm:mb-10 font-bold'>Connect with me</div>
+            <div className='grid grid-cols-3 gap-4 sm:gap-8' ref={socialIconsRef}>
                 <SocialIcon href="https://wa.me/+916264339060" Icon={FaWhatsapp}  />
                 <SocialIcon href="https://www.instagram.com/naman__jain__22?utm_source=qr&igsh=MW1iZGFyZHlzODhpMg==" Icon={FaInstagram} />
                 <SocialIcon href="https://www.linkedin.com/in/naman-jain-bb3969286/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" Icon={FaLinkedin} />
@@ -119,16 +119,16 @@ function SocialSection({ socialIconsRef }) {
 function SocialIcon({ href, Icon }) {
   return (
     <a href={href} target='blank' rel="noopener noreferrer" className="social-icon transform transition-all duration-200 ease-in-out hover:scale-125">
-      <Icon className='text-4xl text-white' />
+      <Icon className='text-2xl sm:text-4xl text-white' />
     </a>
   );
 }
 
 function TechStackSection({ techStackRef }) {
     return (
-        <div className="social mb-4 mt-10 w-full max-w-[350px] h-[350px] box-border shadow-2xl flex flex-col justify-center items-center hover:shadow-black scale-100 hover:scale-110 transition-all duration-200 ease-linear">
-            <p className='text-center text-white text-2xl font-bold mb-8'>My Tech Stack</p>
-            <div className='grid grid-cols-3 gap-8' ref={techStackRef}>
+        <div className="social mb-4 mt-6 sm:mt-10 w-full max-w-[300px] sm:max-w-[350px] h-[300px] sm:h-[350px] box-border shadow-2xl flex flex-col justify-center items-center hover:shadow-black scale-100 hover:scale-110 transition-all duration-200 ease-linear">
+            <p className='text-center text-white text-xl sm:text-2xl font-bold mb-6 sm:mb-8'>My Tech Stack</p>
+            <div className='grid grid-cols-3 gap-4 sm:gap-8' ref={techStackRef}>
                 <TechIcon Icon={IoLogoReact} color="text-blue-600" />
                 <TechIcon Icon={RiJavascriptFill} color="text-yellow-500" />
                 <TechIcon Icon={RiTailwindCssFill} color="text-cyan-600" />
@@ -145,19 +145,19 @@ function TechStackSection({ techStackRef }) {
 
 function TechIcon({ Icon, color }) {
   return (
-    <Icon className={`tech-icon text-4xl ${color} transform transition-all duration-200 ease-in-out hover:scale-125`} />
+    <Icon className={`tech-icon text-2xl sm:text-4xl ${color} transform transition-all duration-200 ease-in-out hover:scale-125`} />
   );
 }
 
 function FullStackSection({ fullStackRef }) {
     return (
-        <div className='w-full mt-4 mb-4 p-16 flex justify-center box-border aboutme items-center m-auto'>
-            <div className="relative w-full max-w-[900px] h-auto md:h-[410px] shadow-lg rounded-lg overflow-hidden group">
+        <div className='w-full project mt-4 mb-4 p-4 sm:p-8 lg:p-16 flex justify-center box-border aboutme items-center m-auto'>
+            <div className="relative w-full max-w-[900px] h-auto shadow-lg rounded-lg overflow-hidden group">
                 <div className="p-2 m-2 flex flex-col items-center justify-center" ref={fullStackRef}>
-                    <h2 className="text-2xl font-bold text-white mb-4 fullstack-item">Full Stack Development</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 fullstack-item">Full Stack Development</h2>
                     <SkillItem text="Build a single page application using React js" />
                     <SkillItem text="Build a Dynamic content using React and Tailwind" />
-                    <div className='grid grid-cols-5 gap-9 text-5xl text-white w-full max-w-[300px] m-auto p-2 mt-8'>
+                    <div className='grid grid-cols-5 gap-4 sm:gap-9 text-3xl sm:text-5xl text-white w-full max-w-[300px] m-auto p-2 mt-6 sm:mt-8'>
                         <TechIcon Icon={SiCplusplus} color="text-blue-900" />
                         <TechIcon Icon={FaHtml5} color="text-red-800" />
                         <TechIcon Icon={FaCss3Alt} color="text-blue-900" />
@@ -177,9 +177,9 @@ function FullStackSection({ fullStackRef }) {
 
 function SkillItem({ text }) {
     return (
-        <div className='flex mt-4 items-center gap-4 justify-center fullstack-item'>
-            <GiWrappingStar className='flex-shrink-0 text-yellow-400' />
-            <p className="text-white text-center">{text}</p>
+        <div className='flex mt-4 items-center gap-2 sm:gap-4 justify-center fullstack-item'>
+            <GiWrappingStar className='flex-shrink-0 text-yellow-400 text-lg sm:text-xl' />
+            <p className="text-white text-center text-sm sm:text-base">{text}</p>
         </div>
     );
 }

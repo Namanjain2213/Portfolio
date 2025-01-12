@@ -28,7 +28,7 @@ const Contact = () => {
                 scrollTrigger: {
                     trigger: titleRef.current,
                     start: 'top 80%',
-                    end: 'bottom 0%',
+                    end: 'bottom 20%',
                     onEnter: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 1, scale: 1 }),
                     onLeave: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 0, scale: 0.8 }),
                     onEnterBack: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 1, scale: 1 }),
@@ -48,7 +48,7 @@ const Contact = () => {
                 scrollTrigger: {
                     trigger: titRef.current,
                     start: 'top 80%',
-                    end: 'bottom 0%',
+                    end: 'bottom 20%',
                     onEnter: () => gsap.to(titRef.current, { opacity: 1, scale: 1 }),
                     onLeave: () => gsap.to(titRef.current, { opacity: 0, scale: 0.8 }),
                     onEnterBack: () => gsap.to(titRef.current, { opacity: 1, scale: 1 }),
@@ -88,20 +88,20 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-16 min-h-screen w-full flex justify-center items-center bg-gray-900 text-white">
+        <section id="contact" className="py-16 min-h-screen w-full flex justify-center items-center  text-white">
             <div className="container mx-auto px-4 flex flex-col items-center">
                 <div className="w-full text-center mb-12">
                     <h2
                         ref={titleRef}
-                        className="text-3xl font-bold mb-4 text-[#00A6ED]"
+                        className="text-3xl font-bold mb-4 text-white"
                     >
                         Contact me
                     </h2>
-                    <div className='h-1 bg-[#00A6ED] w-40 mx-auto' ref={titRef}></div>
+                    <div className='h-1 bg-white w-40 mx-auto' ref={titRef}></div>
                 </div>
                 <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                     <div className="w-full md:w-1/2 space-y-6" ref={leftSectionRef}>
-                        <h2 ref={leftTitleRef} className="text-3xl font-bold mb-4 text-[#00A6ED]">Let's Connect</h2>
+                        <h2 ref={leftTitleRef} className="text-3xl font-bold mb-4 text-white">Let's Connect</h2>
                         <p className="text-lg">
                             I am always open to new opportunities and collaborations. Feel free to reach out to me for any queries, feedback or just to say hi!
                         </p>
@@ -114,7 +114,7 @@ const Contact = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <span className="text-lg">contact@example.com</span>
+                            <span className="text-lg">nj626433@example.com</span>
                         </div>
                     </div>
                     <div className="w-full md:w-1/2">

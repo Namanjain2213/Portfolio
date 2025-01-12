@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,14 +23,14 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
+            <a href="https://github.com/Namanjain2213" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
               <FaGithub size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/naman-jain-bb3969286" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
               <FaLinkedin size={24} />
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
-              <FaTwitter size={24} />
+            <a href="https://www.instagram.com/naman__jain__22/?igsh=MW1iZGFyZHlzODhpMg%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
+              <FaInstagram size={24} />
             </a>
           </motion.div>
         </div>
