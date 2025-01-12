@@ -82,7 +82,9 @@ function LeftSection() {
             <div className="aboutme mb-4 mt-6 sm:mt-10 w-full lg:w-[550px] h-fit p-4 box-border flex flex-col justify-center items-center transition-all duration-200 ease-linear">
                 <div className="text-xl sm:text-2xl md:text-3xl mb-4">About Me</div>
                 <p className='text-base sm:text-lg md:text-2xl text-center lg:text-left'>
-                    I'm <span className='text-xl sm:text-2xl md:text-3xl text-cyan-500'>Naman</span>, a full-stack developer with a passion for frontend and problem-solving. Based in India, I specialize in React and Node.js.
+                    I'm <span className='text-xl sm:text-2xl md:text-3xl text-cyan-500'>Naman</span>, a full-stack developer passionate about crafting engaging front-end experiences and solving complex problems. I specialize in React and Node.js.
+
+
                 </p>
             </div>
         </div>

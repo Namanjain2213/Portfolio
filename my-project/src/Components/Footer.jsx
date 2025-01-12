@@ -23,13 +23,13 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a href="https://github.com/Namanjain2213" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
+            <a href="https://github.com/Namanjain2213" target="_blank" rel="noopener noreferrer" className=" transition-colors duration-300">
               <FaGithub size={24} />
             </a>
             <a href="https://www.linkedin.com/in/naman-jain-bb3969286" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
               <FaLinkedin size={24} />
             </a>
-            <a href="https://www.instagram.com/naman__jain__22/?igsh=MW1iZGFyZHlzODhpMg%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-[#00A6ED] transition-colors duration-300">
+            <a href="https://www.instagram.com/naman__jain__22/?igsh=MW1iZGFyZHlzODhpMg%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors duration-300">
               <FaInstagram size={24} />
             </a>
           </motion.div>

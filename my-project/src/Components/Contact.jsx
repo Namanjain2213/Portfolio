@@ -19,40 +19,33 @@ const Contact = () => {
         // Animation for the titles
         gsap.fromTo(
             [titleRef.current, leftTitleRef.current],
-            { opacity: 0, scale: 0.8 },
+            { opacity: 0, y: 20 },
             {
                 opacity: 1,
-                scale: 1,
+                y: 0,
                 duration: 0.8,
-                ease: 'back.out(1.7)',
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: titleRef.current,
                     start: 'top 80%',
                     end: 'bottom 20%',
-                    onEnter: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 1, scale: 1 }),
-                    onLeave: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 0, scale: 0.8 }),
-                    onEnterBack: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 1, scale: 1 }),
-                    onLeaveBack: () => gsap.to([titleRef.current, leftTitleRef.current], { opacity: 0, scale: 0.8 }),
+                    toggleActions: 'play none none reverse',
                 },
             }
         );
 
         gsap.fromTo(
             titRef.current,
-            { opacity: 0, scale: 0.8 },
+            { width: 0 },
             {
-                opacity: 1,
-                scale: 1,
+                width: '100%',
                 duration: 0.8,
-                ease: 'back.out(1.7)',
+                ease: 'power3.inOut',
                 scrollTrigger: {
                     trigger: titRef.current,
                     start: 'top 80%',
                     end: 'bottom 20%',
-                    onEnter: () => gsap.to(titRef.current, { opacity: 1, scale: 1 }),
-                    onLeave: () => gsap.to(titRef.current, { opacity: 0, scale: 0.8 }),
-                    onEnterBack: () => gsap.to(titRef.current, { opacity: 1, scale: 1 }),
-                    onLeaveBack: () => gsap.to(titRef.current, { opacity: 0, scale: 0.8 }),
+                    toggleActions: 'play none none reverse',
                 },
             }
         );
@@ -60,20 +53,18 @@ const Contact = () => {
         // Animation for the form and left section
         gsap.fromTo(
             [formRef.current, leftSectionRef.current],
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
                 duration: 1,
-                ease: 'power2.out',
+                ease: 'power3.out',
+                stagger: 0.2,
                 scrollTrigger: {
                     trigger: formRef.current,
                     start: 'top 80%',
-                    end: 'bottom 0%',
-                    onEnter: () => gsap.to([formRef.current, leftSectionRef.current], { opacity: 1, y: 0 }),
-                    onLeave: () => gsap.to([formRef.current, leftSectionRef.current], { opacity: 0, y: 50 }),
-                    onEnterBack: () => gsap.to([formRef.current, leftSectionRef.current], { opacity: 1, y: 0 }),
-                    onLeaveBack: () => gsap.to([formRef.current, leftSectionRef.current], { opacity: 0, y: 50 }),
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse',
                 },
             }
         );
@@ -93,20 +84,20 @@ const Contact = () => {
                 <div className="w-full text-center mb-12">
                     <h2
                         ref={titleRef}
-                        className="text-3xl font-bold mb-4 text-white"
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white"
                     >
                         Contact me
                     </h2>
-                    <div className='h-1 bg-white w-40 mx-auto' ref={titRef}></div>
+                    <div className='h-1 bg-white w-0 mx-auto' ref={titRef}></div>
                 </div>
-                <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                    <div className="w-full md:w-1/2 space-y-6" ref={leftSectionRef}>
-                        <h2 ref={leftTitleRef} className="text-3xl font-bold mb-4 text-white">Let's Connect</h2>
-                        <p className="text-lg">
-                            I am always open to new opportunities and collaborations. Feel free to reach out to me for any queries, feedback or just to say hi!
+                <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+                    <div className="w-full lg:w-1/2 space-y-6" ref={leftSectionRef}>
+                        <h2 ref={leftTitleRef} className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">Let's Connect</h2>
+                        <p className="text-base sm:text-lg lg:text-xl">
+                            Hey there! I'm always excited to connect with fellow developers, potential collaborators, or anyone interested in web development. Whether you have a project idea, a question about my work, or just want to say hi, I'd love to hear from you!
                         </p>
-                        <p className="text-lg">
-                            You can contact me through the form or connect via LinkedIn, Twitter, or GitHub. Let's collaborate and build something amazing together!
+                        <p className="text-base sm:text-lg lg:text-xl">
+                            Feel free to drop me a message using the form, or connect with me on LinkedIn, GitHub, or Instagram. Let's chat about code, create something awesome together, or discuss the latest tech trends. Your message could be the start of an amazing collaboration!
                         </p>
                         <div className="flex items-center space-x-4 mt-6">
                             <div className="w-10 h-10 bg-[#00A6ED] rounded-full flex items-center justify-center">
@@ -114,10 +105,10 @@ const Contact = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <span className="text-lg">nj626433@example.com</span>
+                            <span className="text-lg">nj626433@gmail.com</span>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full lg:w-1/2">
                         <form
                             ref={formRef}
                             onSubmit={handleSubmit}
